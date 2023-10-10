@@ -20,39 +20,6 @@ import { MatOptionModule } from '@angular/material/core';
 export class RegisterComponent {
   emailFormControl = new FormControl;
   matcher = new ErrorStateMatcher();
-
-  // profileForm = new FormGroup({
-  //   firstName: new FormControl(''),
-  //   lastName: new FormControl(''),
-  //   address: new FormGroup({
-  //     street: new FormControl(''),
-  //     city: new FormControl(''),
-  //     state: new FormControl(''),
-  //     zip: new FormControl('')
-  //   })
-  // });
-
-
-  // profileForm = this.fb.group({
-  //   firstName: ['',
-  //   //Validators.required,
-  //   [Validators.required,Validators.minLength(3)]
-  // ],
-  //   lastName: ['',
-  //   //Validators.required,
-  //   [Validators.required,Validators.minLength(3),CustomValidator.checkFirstAndLastUppercase()]
-  // ],
-  //   address: this.fb.group({
-  //     street: [''],
-  //     city: [''],
-  //     state: ['',CustomValidator.checkAddressUSA()],
-  //     zip: ['']
-  //   }),
-  //   aliases: this.fb.array([
-  //     this.fb.control('')
-  //   ])
-  // });
-
   showPassword: boolean = false;
 
   registerForm = this.fb.group({
@@ -81,28 +48,4 @@ onSubmit(){
 togglePasswordVisibility() {
   this.showPassword = !this.showPassword;
 } 
-
-  // onSubmit() {
-  //   // TODO: Use EventEmitter with form value
-  //   console.warn(JSON.stringify(this.profileForm.value,null,4));
-  // }
-
-  // updateProfile() {
-  //   this.profileForm.patchValue({
-  //     firstName: 'Nancy',
-  //     address: {
-  //       street: '123 Drew Street',
-  //       city:'New York'
-  //     }
-  //   });
-  // }
-
-  // getAliases() {
-  //   return this.profileForm.get('aliases') as FormArray;
-  // }
-
-  // addAlias() {
-  //   this.getAliases().push(this.fb.control(''));
-  // }
-
 }

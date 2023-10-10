@@ -1,7 +1,14 @@
-<header>
-  <span>secret bank</span>
-  <nav>
-    <a routerLink="/login">login</a>
-    <a routerLink="/register">register</a>
-  </nav>
-</header>
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon >menu</mat-icon>
+  </button>
+  <span routerLink="/home" style="cursor: pointer;" class="title">Secret Bank</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" routerLink="/login">
+    <mat-icon class="material-symbols-outlined">person</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" routerLink="/register">
+    <mat-icon>person_add</mat-icon>
+  </button>
+</mat-toolbar>
+
