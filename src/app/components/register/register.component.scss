@@ -1,0 +1,43 @@
+/* Aggiungi stili personalizzati per il form */
+.example-full-width {
+    width: 100%;
+  }
+  
+  /* Stile per il pulsante di invio */
+  button[type="submit"] {
+    margin-top: 10px;
+  }
+  
+  /* Stile per i messaggi di errore */
+  mat-error {
+    color: red;
+    font-size: 14px;
+  }
+  
+  /* Stile per i campi di input */
+  mat-form-field {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  /* Stile per il checkbox "Mostra password" */
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Stile per l'etichetta del checkbox */
+  .checkbox-label {
+    margin-left: 10px;
+  }
+
+  .example-additional-selection {
+    opacity: 0.75;
+    font-size: 0.75em;
+  }
+  
+  /* Stile per gli option del menu a discesa */
+  mat-option {
+    font-size: 14px;
+  }
+  

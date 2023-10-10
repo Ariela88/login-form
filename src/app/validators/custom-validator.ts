@@ -1,92 +1,92 @@
-import { AbsoluteSourceSpan } from "@angular/compiler";
-import { AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms";
+import { AbsoluteSourceSpan } from '@angular/compiler';
+import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 
 export class CustomValidator {
-
-
   static checkFirstAndLastUppercase(): ValidatorFn {
-
     return (control: AbstractControl): ValidationErrors | null => {
-
       if (control.value && control.value.length > 0) {
+        const isFirstUpper =
+          control.value[0] === control.value[0].toUpperCase();
+        const isLastUpper =
+          control.value[control.value.length - 1] ===
+          control.value[control.value.length - 1].toUpperCase();
 
-
-
-        const isFirstUpper = control.value[0] === control.value[0].toUpperCase()
-        const isLastUpper = control.value[control.value.length - 1] === control.value[control.value.length - 1].toUpperCase()
-
-        const isValid = isFirstUpper && isLastUpper
+        const isValid = isFirstUpper && isLastUpper;
 
         if (isValid) {
-          return null
+          return null;
         } else {
-          return { isFirstUpper: isFirstUpper, isLastUpper: isLastUpper }
+          return { isFirstUpper: isFirstUpper, isLastUpper: isLastUpper };
         }
       } else {
-        return null
+        return null;
       }
-    }
- }
-
-
+    };
+  }
 
   static checkAddressUSA() {
-
     return (control: AbstractControl): ValidationErrors | null => {
+      const validCountryNames = [
+        'usa',
+        'u.s.a',
+        'united states',
+        'united states of america',
+      ];
 
-const validCountryNames = ['usa','u.s.a','united states','united states of america']
+      const isInArray = validCountryNames.includes(control.value.toLowerCase());
 
-const isInArray = validCountryNames.includes(control.value.toLowerCase())
-
-
-
-
-      return isInArray ? null : {invalidName: control.value}
-    }
-
-
+      return isInArray ? null : { invalidName: control.value };
+    };
   }
 
-
-  loginAndPasswordUser(){
-
+  static checkNotMinor(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
+      if (!control.value) {
+        return null;
+      }
 
+      const today = new Date().getFullYear();
+      const birthDate = control.value
+      const age = today - birthDate
 
+      if (age < 18) {
+        return { underAge: true };
+      }
 
-
-
-            return null
-          }
-
+      return null;
+    };
   }
 
-
-  static checkNotMinor(){
-
+  static CustomPasswordValidator(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
+      if (!control.value) {
+        return null;
+      }
 
+      const regex =
+        /^(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>])(?=.*[a-z])(?=.*\d).{8,}$/;
 
+      if (!regex.test(control.value)) {
+        return { invalidPassword: true };
+      }
 
-      return null
-    }
-
-
+      return null;
+    };
   }
 
-
-  static isPasswordValid(){
-
+  static KeywordValidator(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
-//min 8 caratteri,
-//almeno una minuscola, un nipote di paperino e due caratteri speciali(! £ $ ?@#*€)
+      if (!control.value) {
+        return null;
+      }
 
+      const includesWords = /(qui|quo|qua)/i.test(control.value);
 
+      if (!includesWords) {
+        return { invalidKeyword: true };
+      }
 
-      return null
-    }
-
-
+      return null;
+    };
   }
-
 }
