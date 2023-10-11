@@ -1,25 +1,23 @@
-/* Stile per tutti i campi di input */
-body{
+body {
   background-color: rgb(143, 227, 255);
 }
 
 input {
-  
-  padding: 10px 40px;
+
+  padding: 10px 20px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-/* Stile per le etichette */
+
 label {
- 
+
   font-weight: bold;
 }
 
-/* Stile per i pulsanti */
 button {
- 
+
   width: 160px;
   background-color: #4caf50;
   color: white;
@@ -29,83 +27,88 @@ button {
   cursor: pointer;
 }
 
-/* Stile per i pulsanti disabilitati */
+
 button:disabled {
   background-color: #ddd;
   cursor: not-allowed;
 }
 
-/* Stile per gli errori */
 .error-message {
   color: red;
   margin-top: 5px;
 }
 
-.form-container{
+.form-container {
   width: 600px;
+  height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(155, 201, 248);
+  background-color: rgb(68, 68, 68);
+  border-radius: 20px;
+  color: white;
 }
 
-.container{
+.container {
   width: 100vw;
   height: 100vh;
   display: flex;
-justify-content: center;
-align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-.custom-form{
-  
+
+.custom-form {
+
   display: flex;
   flex-direction: column;
   gap: 16px;
   padding: 24px;
   align-items: flex-start;
   justify-content: space-between;
-  
-  
+
+
 }
 
-.message-validation{
+.message-validation {
   color: red;
   width: 200px;
   font-size: 12px;
+  text-align: right;
+  align-self: flex-end;
 }
 
-.password-input{
+.password-input {
   display: flex;
-  
+
 }
 
 
 
-.show-password input{
- flex: 1 1;
-  
+.show-password input {
+  flex: 1 1;
+
 }
 
-.input-div{
+.input-div {
   width: 100%;
   display: flex;
   justify-content: space-between;
   gap: 24px;
 }
 
-select{
-  width: 65%;
+select {
+  width: 54%;
 }
 
-.button-container{
+.button-container {
   display: flex;
   width: 100%;
   gap: 24px;
   justify-content: space-between;
 }
 
-.ps-message{
+.ps-message {
   width: 100%;
-  font-size: 8px;
+  font-size: 10px;
   text-align: right;
 }

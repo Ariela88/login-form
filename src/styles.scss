@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-body{
-  margin: 0px;
-}
 
-html, body { height: 100%; }
+html, body { height: 100vh;
+overflow: hidden;}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
 background-image: url(./assets/pattern-bg.jpg);
 background-size: cover;
-background-attachment: fixed;}
+background-attachment: fixed;
+font-family: Roboto, "Helvetica Neue", sans-serif;
+box-sizing: border-box;
+}
+
+html, body { height: 100%; }
+body { margin: 0;  }

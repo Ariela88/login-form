@@ -1,13 +1,23 @@
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 <div class="login-container">
 
   <div class="login-window">
     <div class="input-div">
-      <label for="email">email*: </label>
-      <input id="email" type="email" formControlName="email">
+      <label for="username">username*: </label>
+      <input id="username" type="text" formControlName="username">
     </div>
     <div class="input-div">
       <label for="password">password*: </label>
-      <input id="password" type="password" formControlName="password">
+      <input id="password" [type]="showPassword ? 'text' : 'password'" formControlName="password">
     </div>
+    <a routerLink="/register">Non ti ricordi la password?</a>
+    <div class="button-container">
+      <button type="submit" [disabled]="!loginForm.valid">Submit</button>
+      <button type="reset">Reset</button>
+    </div>
+
   </div>
 </div>
+
+</form>
